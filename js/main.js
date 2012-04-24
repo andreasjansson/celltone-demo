@@ -96,6 +96,8 @@ function updatePage() {
     $.ajax({
         url: config.server + '/' + id,
         success: function(data) {
+	    if(typeof data != 'object')
+		data = $.parseJSON(data);
             $code.val(data.code);
             $links.show();
             _.each(['permalink', 'midi', 'mp3'], function(x) {
