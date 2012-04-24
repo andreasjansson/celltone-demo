@@ -52,7 +52,9 @@ function setupSubmit() {
             type: 'post',
             success: function(data) {
                 hideSpinner();
-                if('success' in data) {
+		if(typeof data != 'object')
+		    data = $.parseJSON(data);
+                if(typeof data.success != 'undefined') {
                     if(data.success)
                         submitSuccess(data);
                     else {
@@ -99,7 +101,6 @@ function updatePage() {
             _.each(['permalink', 'midi', 'mp3'], function(x) {
                 $('#' + x).html('<a href="' + data[x] + '">' + data[x] + '</a>')
             });
-            console.log($("#jam"));
             $("#jam").html('<a href="http://www.thisismyjam.com/jam/create?url=' + encodeURIComponent(data.mp3) + '">Make This My Jam!</a>');
         },
         error: function(jqXHR, textStatus, errorThrown) {
