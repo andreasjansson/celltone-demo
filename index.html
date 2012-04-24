@@ -1,0 +1,118 @@
+<html>
+  <head>
+    <style>
+      @import url(css/style.css);
+    </style>
+    <title>
+      Celltone Demo
+    </title>
+  </head>
+  <body>
+    <header>
+      <h1>Celltone Demo</h1>
+    </header>
+    <p id="intro"><em>Celltone is a simple programming language for
+        generative music composition, based on cellular automata.
+        This is an interactive demo site where you can try
+        Celltone without having to install it.
+        <a href="https://github.com/andreasjansson/Celltone">Go here</a>
+        to find documentation, or get started with the examples.</em></p>
+    <section id="program">
+      <h2>Write some code</h2>
+      <form id="form">
+        <textarea id="code"></textarea>
+        <div id="lengthDiv">
+          <label for="length">Length</label>
+          <input id="length" type="range" min="1" max="60" value="15" />
+          <span id="lengthDisplay">15</span><span> sec</span>
+        </div>
+        <div id="buttons">
+          <button id="submit">Generate</button>
+          <img src="images/spinner.gif" class="spinner" />
+          <button id="new">New</button>
+        </div>
+      </form>
+      <div class="clearfix"></div>
+      <section id="links">
+        <h2>Links for this program</h2>
+        <ul>
+          <li title="Permalink" id="permalink"></li>
+          <li title="MP3 file" id="mp3"></li>
+          <li title="MIDI file" id="midi"></li>
+          <li title="Make This My Jam!" id="jam"></li>
+        </ul>
+      </section>
+      <section id="debug">
+        <h2>Debug</h2>
+        <h3>Celltone output</h3>
+        <pre id="celltone">
+        </pre>
+        <h3>Timidity output</h3>
+        <pre id="timidity">
+        </pre>
+        <h3>Lame output</h3>
+        <pre id="lame">
+        </pre>
+      </section>
+    </section>
+    <section id="examples">
+      <h2>Examples</h2>
+      <ul>
+        <li><a href="#">Bubblesort</a>
+          <pre>
+a = [12, 11, 9, 7, 5, 4, 2, 0]
+x = [0, _, _, _, _, _, _, _]
+x.velocity = 0
+x.channel = 1
+
+{a[0] &gt; a[1], x[1] != 0} =&gt;
+  {a[0] = a[1], a[1] = a[0]}
+
+&lt;tempo&gt; = 80
+</pre>
+        </li>
+        <li><a href="#">Longer example</a>
+          <pre>
+a = [0, _, _]
+b = [_, _]
+c = [0, _, _, _, _]
+
+a.transpose = 0
+b.transpose = 5
+c.transpose = 7
+
+a.octava = 5
+b.octava = 5
+c.octava = 5
+
+a.channel = 1
+b.channel = 2
+c.channel = 3
+
+{<0>[0] != _, <0>[0] != _, <0>[0] == 4} =>
+  {<0>[0] = _, <2>[0] = 7}
+{<0>[0] != _, <0>[0] != _, <0>[0] == 7} => 
+  {<0>[0] = _, <2>[0] = 9}
+{<0>[0] != _, <0>[0] != _, <0>[0] == 9} => 
+  {<0>[0] = _, <2>[0] = 0}
+{<0>[0] != _, <0>[0] != _} => 
+  {<0>[0] = _, <2>[0] = <0>[0], <0>[2] = 4, <1>[2] = 7}
+
+&lt;tempo&gt; = 100
+          </pre>
+        </li>
+      </ul>
+    </section>
+    <section id="docs">
+    </section>
+    <footer>
+      <nav>
+        <a href="https://github.com/andreasjansson/Celltone">Celltone on Github</a>
+        <a href="http://twitter.com/ndreasa">Made by Andreas Jansson</a>
+      </nav>
+    </footer>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="js/lib/underscore-min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

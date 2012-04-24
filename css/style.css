@@ -1,0 +1,105 @@
+#links, #examples pre, #debug, .spinner {
+    display: none;
+}
+
+body {
+    max-width: 600px;
+    margin: auto;
+    padding: 0 20px;
+    background-image: url(../images/bg.png);
+    font-size: 16px;
+}
+
+h1 {
+    margin: 20px;
+}
+
+h2 {
+    font-weight: normal;
+}
+
+h3 {
+    font-weight: normal;
+}
+
+.clearfix {
+    clear: both;
+}
+
+header {
+    padding: 1px 30px;
+    color: white;
+    font-size: 30px;
+    text-shadow: 5px 5px 0px blue, -5px -5px 0px green, 5px -5px 0px purple, -5px 5px 0px orange;
+    text-align: center;
+}
+
+#intro {
+    padding: 1px;
+    background-color: #EEE;
+    margin-bottom: 40px;
+}
+
+#code {
+    width: 100%;
+    height: 300px;
+    opacity: .7;
+    font-size: 20px;
+    padding: 10px;
+    font-family: monospace;
+	  border: 1px solid #333;
+}
+
+#lengthDiv {
+    width: 70%;
+}
+
+#length {
+    width: 50%;
+    vertical-align: sub;
+}
+
+#lengthDiv {
+    width: 50%;
+    margin-top: 20px;
+    float: left;
+}
+
+#buttons {
+    float: right;
+}
+
+button, #buttons .spinner {
+    float: left;
+    padding: 10px 20px;
+    margin: 20px 0 0 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#buttons .spinner {
+    padding-right: 40px;
+}
+
+#debug pre {
+    font-size: 11px;
+    background-color: #CCC;
+    border: 1px solid #333;
+    max-height: 400px;
+    overflow: auto;
+    opacity: .7;
+    padding: 5px;
+}
+
+footer {
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+footer a {
+    padding: 0 20px;
+    
+}
